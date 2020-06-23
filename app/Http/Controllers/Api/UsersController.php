@@ -30,7 +30,7 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         $user = new User;
-        $user->id = Uuid::uuid ();
+        $user->id = \Webpatser\Uuid\Uuid::generate ()->string;
         $user->names = $request[1]['names'];
         $user->last_names = $request[1]['last_names'];
         $user->email = $request[1]['email'];
