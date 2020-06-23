@@ -30,7 +30,7 @@ class CreditCardsController extends Controller
         $dataExpiration = explode ('/',$request->expiry_card);
         $newExpiration = '20'.$dataExpiration[1].'-'.$dataExpiration[0].'-01';
         $date = date('Y-m-d', strtotime($newExpiration));
-        $newId = Uuid::uuid ();
+        $newId = \Webpatser\Uuid\Uuid::generate ()->string;
         $creditCard = new CreditCard();
         $creditCard->id = $newId;
         $creditCard->card_holder_name = $request->name_card;
