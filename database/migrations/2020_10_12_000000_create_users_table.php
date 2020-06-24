@@ -20,8 +20,6 @@ class CreateUsersTable extends Migration
             $table->enum ('type_identification',['Identification Card', 'Passport','NIT']);
             $table->bigInteger('number_identification');
             $table->char('id_credit_card')->nullable();
-            //$table->foreign('id_credit_card')->references('id')->on('credit_cards');
-            //$table->string('email')->unique();
             $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
